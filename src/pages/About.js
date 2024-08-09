@@ -32,10 +32,8 @@ const About = () => {
             className='animate__animated animate__backInLeft animate__delay-2s'>
             Hello! I live and was born in Khulna, Bangladesh. My name is Ankit
             Sana. I am a web developer as well as a student. I have learned
-            HTML, CSS, JS, ReactJS, ExpressJS, NodeJS etc. I'm an intermediate
-            level web developer and I want to share my knowledge with you to
-            make your web simple. I will try to teach you about these
-            technologies and make you less frustrated about them.
+            HTML, CSS, JS, ReactJS, etc. I'm an intermediate level web developer
+            and I can make good looking functional website.
           </div>
         </Box>
         <Cube />

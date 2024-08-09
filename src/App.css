@@ -128,22 +128,12 @@ a {
   text-decoration: none;
 }
 
-.youtube-a,
-.facebook-a,
 .github-a {
   display: flex;
   flex-direction: column;
   text-align: center;
   color: rgb(95, 95, 95);
   transition: 0.4s all ease;
-}
-
-.youtube-a:hover {
-  color: #ff0000;
-}
-
-.facebook-a:hover {
-  color: #3b5998;
 }
 
 .github-a:hover {

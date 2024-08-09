@@ -1,15 +1,19 @@
 /** @format */
 import { IconButton, useColorMode } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { BsSun, BsMoon } from "react-icons/bs";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode, setColorMode } = useColorMode();
 
-  if (localStorage.getItem("chakra-ui-color-mode")) {
-    setColorMode(localStorage.getItem("chakra-ui-color-mode"));
-  }
+  useEffect(() => {
+    if (localStorage.getItem("chakra-ui-color-mode")) {
+      setColorMode(localStorage.getItem("chakra-ui-color-mode"));
+    }
+  });
+
+  const [toggle, setToggle] = useState(false);
 
   return (
     <div
@@ -21,19 +25,18 @@ const Navbar = () => {
             className='navbar-brand'
             to='/'
             style={{ fontWeight: "bold", fontSize: "1.80em" }}>
-            Learn JavaScript
+            Portfolio
           </Link>
-          <button
-            className={"navbar-toggler"}
-            type='button'
-            data-bs-toggle='collapse'
-            data-bs-target='#navbarNav'
-            aria-controls='navbarNav'
-            aria-expanded='false'
-            aria-label='Toggle navigation'>
-            <span className='navbar-toggler-icon'></span>
+          <button className={"navbar-toggler"} type='button'>
+            <span
+              className='navbar-toggler-icon'
+              onClick={() => setToggle(!toggle)}></span>
           </button>
-          <div className='collapse navbar-collapse' id='navbarNav'>
+          <div
+            className='collapse navbar-collapse'
+            style={{
+              display: toggle ? "block" : "none",
+            }}>
             <ul className='navbar-nav ms-auto'>
               <li className='nav-item'>
                 <IconButton

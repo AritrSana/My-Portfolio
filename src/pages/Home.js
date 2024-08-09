@@ -33,9 +33,9 @@ const Home = () => {
             w='80%'
             fontSize={{ base: "xl", md: "2xl" }}
             className='animate__animated animate__backInRight animate__delay-2s'>
-            Hi! I'm Aritro/Ankit Sana and I'm an intermediate level programmer
-            as well as a student. I will be the instructor of this JavaScript
-            course.
+            Hi! I'm Aritro/Ankit Sana and I'm an intermediate level web
+            developer as well as a student. I develope websites using HTML, CSS
+            and JavaScript.
           </Text>
         </Box>
         <Box
@@ -48,9 +48,9 @@ const Home = () => {
           <Button
             variant='outline'
             colorScheme='red'
-            onClick={() => history("/js-series")}
+            onClick={() => history("/contact")}
             className='animate__animated animate__backInLeft animate__delay-2s'>
-            Get Started
+            Contact
           </Button>
           <Button
             variant='outline'
