@@ -1,38 +1,295 @@
-.App {
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.skill-bars {
+  padding: 25px 30px;
+  width: 600px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.skill-bars .bar {
+  margin: 20px 0;
+}
+.skill-bars .bar:first-child {
+  margin-top: 0px;
+}
+.skill-bars .bar .info {
+  margin-bottom: 5px;
+}
+.skill-bars .bar .info span {
+  font-weight: 500;
+  font-size: 17px;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
+}
+.skill-bars .bar .progress-line {
+  height: 10px;
+  width: 100%;
+  background: #f0f0f0;
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05),
+    0 1px rgba(255, 255, 255, 0.8);
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.bar .progress-line span {
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+.bar .progress-line.html span {
+  background-color: limegreen;
+  width: 95%;
+}
+.bar .progress-line.css span {
+  background-color: yellowgreen;
+  width: 70%;
+}
+
+.bar .progress-line.javascript span {
+  background-color: lime;
+  width: 85%;
+}
+
+.bar .progress-line.react span {
+  background-color: lawngreen;
+  width: 80%;
+}
+
+.progress-line span::before {
+  position: absolute;
+  content: "";
+  top: -10px;
+  right: 0;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+.progress-line span::after {
+  content: "";
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+  100% {
+    opacity: 1;
+  }
+}
+.progress-line.html span::after {
+  content: "95%";
+}
+.progress-line.css span::after {
+  content: "70%";
+}
+
+.progress-line.javascript span::after {
+  content: "85%";
+}
+
+.progress-line.react span::after {
+  content: "80%";
+}
+
+a {
+  text-decoration: none;
+}
+
+.youtube-a,
+.facebook-a,
+.github-a {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(95, 95, 95);
+  transition: 0.4s all ease;
+}
+
+.youtube-a:hover {
+  color: #ff0000;
+}
+
+.facebook-a:hover {
+  color: #3b5998;
+}
+
+.github-a:hover {
+  color: #f0f6fc;
+}
+
+.my-pic {
+  border-radius: 5%;
+  filter: saturate(0);
+  transition: 0.4s all ease;
+  z-index: 0;
+}
+
+.my-pic:hover {
+  filter: saturate(1);
+}
+
+.navbar-brand {
+  color: inherit !important;
+}
+
+.navbar-nav {
+  align-items: flex-end;
+}
+
+.nav-item {
+  width: 80px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-link {
+  color: inherit !important;
+  transition: 0.3s all ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-link.dark:hover {
+  background-color: #c2c2c2;
+  color: #252930 !important;
+  border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-link.light:hover {
+  background-color: #252930;
+  color: #c2c2c2 !important;
+  border-radius: 5px;
+}
+
+.navbar-toggler span {
+  color: inherit !important;
+}
+
+nav .active.dark {
+  background-color: #e2e8f0;
+  color: #1a202c !important;
+  border-radius: 5px;
+}
+
+nav .active.light {
+  background-color: #1a202c;
+  color: #e2e8f0 !important;
+  border-radius: 5px;
+}
+
+footer {
+  border-radius: 5px;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stage-cube-cont {
+  margin-top: 3rem;
+}
+
+.cube-spinner {
+  animation-name: spincube;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+  transform-style: preserve-3d;
+  transform-origin: 100px 100px 0;
+  margin-left: calc(50% - 100px);
+}
+
+.cube-spinner div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  font-size: 100px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  box-shadow: 0 0 20px 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.cube-spinner .face1 {
+  transform: translateZ(100px);
+  color: #dd0031;
+}
+.cube-spinner .face2 {
+  transform: rotateY(90deg) translateZ(100px);
+  color: #f06529;
+}
+.cube-spinner .face3 {
+  transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+  color: #28a4d9;
+}
+.cube-spinner .face4 {
+  transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+  color: #5ed4f4;
+}
+.cube-spinner .face5 {
+  transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+  color: #efd81d;
+}
+.cube-spinner .face6 {
+  transform: rotateX(-90deg) translateZ(100px);
+  color: #ec4d28;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes spincube {
+  from,
   to {
-    transform: rotate(360deg);
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  16% {
+    transform: rotateY(-90deg);
+  }
+  33% {
+    transform: rotateY(-90deg) rotateZ(90deg);
+  }
+  50% {
+    transform: rotateY(-180deg) rotateZ(90deg);
+  }
+
+  66% {
+    transform: rotateY(-270deg) rotateZ(90deg);
+  }
+
+  83% {
+    transform: rotateX(90deg);
   }
 }
