@@ -4,7 +4,7 @@ import React from "react";
 
 const SkillProgressBar = () => {
   return (
-    <div style={{ marginBottom: ".7rem" }}>
+    <div style={{ marginBottom: ".7rem", width: "100%", height: "100%"}}>
       <div className='skill-bars'>
         <div className='bar'>
           <div className='info'>
